@@ -26,4 +26,7 @@ public class ProductEntity {
 
     @Column(name = "label")
     String label;
+
+    @Column(name = "price")
+    Long price;
 }

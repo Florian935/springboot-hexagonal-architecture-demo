@@ -17,11 +17,11 @@ public class HexagonalArchitectureApplication {
 	@Bean
 	ApplicationRunner init(ProductEntityRepository productEntityRepository) {
 		return args -> {
-			productEntityRepository.save(new ProductEntity(null, "Product 1"));
-			productEntityRepository.save(new ProductEntity(null, "Product 2"));
-			productEntityRepository.save(new ProductEntity(null, "Product 3"));
-			productEntityRepository.save(new ProductEntity(null, "Product 4"));
-			productEntityRepository.save(new ProductEntity(null, "Product 5"));
+			productEntityRepository.save(new ProductEntity(null, "Product 1", 10L));
+			productEntityRepository.save(new ProductEntity(null, "Product 2", 20L));
+			productEntityRepository.save(new ProductEntity(null, "Product 3",30L));
+			productEntityRepository.save(new ProductEntity(null, "Product 4", null));
+			productEntityRepository.save(new ProductEntity(null, "Product 5", 50L));
 		};
 	}
 }

@@ -2,6 +2,7 @@ package com.florian935.hexagonalarchitecture.infrastructure.adapter.input.rest;
 
 import com.florian935.hexagonalarchitecture.application.port.input.CreateProductUseCase;
 import com.florian935.hexagonalarchitecture.application.port.input.GetProductUseCase;
+import com.florian935.hexagonalarchitecture.domain.product.model.Price;
 import com.florian935.hexagonalarchitecture.domain.product.model.Product;
 import com.florian935.hexagonalarchitecture.domain.product.model.ProductId;
 import com.florian935.hexagonalarchitecture.infrastructure.adapter.input.rest.data.request.CreateProductRequest;
@@ -45,6 +46,17 @@ public class ProductRestAdapter {
         final Product product = getProductUseCase.getProductById(ProductId.of(productId));
 
         return productPersistenceMapper.toGetProductResponse(product);
+    }
+
+    @GetMapping(path = "prices/{price}", produces = APPLICATION_JSON_VALUE)
+    @ResponseStatus(OK)
+    @ResponseBody
+    List<GetProductResponse> findProductsByPriceGreaterThanOrEqualTo(@PathVariable Long price) {
+        final List<Product> products = getProductUseCase.getProductsByPriceGreaterThanOrEqualTo(Price.of(price));
+
+        return products.stream()
+                .map(productPersistenceMapper::toGetProductResponse)
+                .toList();
     }
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)

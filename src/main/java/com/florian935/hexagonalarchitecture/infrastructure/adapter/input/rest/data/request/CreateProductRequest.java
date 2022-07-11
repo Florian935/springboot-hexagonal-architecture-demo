@@ -3,5 +3,5 @@ package com.florian935.hexagonalarchitecture.infrastructure.adapter.input.rest.d
 import lombok.Builder;
 
 @Builder
-public record CreateProductRequest(String label) {
+public record CreateProductRequest(String label, Long price) {
 }
