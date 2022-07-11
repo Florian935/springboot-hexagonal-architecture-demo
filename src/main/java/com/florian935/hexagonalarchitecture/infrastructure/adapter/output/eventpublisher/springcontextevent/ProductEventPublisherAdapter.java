@@ -1,4 +1,4 @@
-package com.florian935.hexagonalarchitecture.infrastructure.adapter.output.eventpublisher.kafka;
+package com.florian935.hexagonalarchitecture.infrastructure.adapter.output.eventpublisher.springcontextevent;
 
 import com.florian935.hexagonalarchitecture.application.port.output.ProductEventPublisher;
 import com.florian935.hexagonalarchitecture.domain.product.event.ProductCreatedEvent;

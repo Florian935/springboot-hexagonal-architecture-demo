@@ -1,4 +1,4 @@
-package com.florian935.hexagonalarchitecture.infrastructure.adapter.input.eventlistener;
+package com.florian935.hexagonalarchitecture.infrastructure.adapter.input.eventlistener.springcontextevent;
 
 import com.florian935.hexagonalarchitecture.domain.product.event.ProductCreatedEvent;
 import com.florian935.hexagonalarchitecture.infrastructure.configuration.annotation.EventAdapter;
